@@ -168,7 +168,7 @@ export const TabFeatures = {
         }
         const accel =
           AppConstants.platform == "macosx" ? event.metaKey : event.ctrlKey;
-        if (!accel || !event.shiftKey || event.key?.toLowerCase() != "u") {
+        if (!accel || !event.shiftKey || (event.key?.toLowerCase() != "u" && event.code != "KeyU")) {
           return;
         }
         const url = win.gBrowser.currentURI?.spec;
